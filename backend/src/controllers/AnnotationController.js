@@ -8,6 +8,8 @@ module.exports = {
     },
     
     create(request, response) {
+        console.log(request.body);
+        console.log("___________");
         const { title, notes, priority } = request.body;
 
         console.log(title);
