@@ -3,8 +3,13 @@ const Annotations = require('../models/AnnotationData');
 module.exports = {
 
     async read(request, response) {
-        const annotationList = await Annotations.find();
-        return response.json(annotationList);
+        try {
+            const annotationList = await Annotations.find();
+    
+            return response.json(annotationList);
+        } catch (error) {
+            return response.status(500).json({ error: 'Error fetching annotations', details: error });
+        }
     },
     
     create(request, response) {
