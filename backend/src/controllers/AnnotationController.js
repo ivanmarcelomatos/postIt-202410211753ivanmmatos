@@ -2,10 +2,9 @@ const Annotations = require('../models/AnnotationData');
 
 module.exports = {
 
-    read(request, response) {
-        return response.json({
-            success: true
-        });
+    async read(request, response) {
+        const annotationList = await Annotations.find();
+        return response.json(annotationList);
     },
     
     create(request, response) {
