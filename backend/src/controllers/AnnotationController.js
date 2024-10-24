@@ -20,5 +20,17 @@ module.exports = {
             priority
         });
         return response.json(annotationCreated);
+    },
+
+    async delete(request, response) {
+        const { id } = request.params;
+        
+        const annotationDeleted = await Annotations.findOneAndDelete({ _id : id });
+        
+        if(annotationDeleted) {
+            return response.json(annotationDeleted);
+        };
+
+        return response.status(404).json({ error: "no record was found to delete!" });
     }
 };
