@@ -12,12 +12,12 @@ module.exports = {
     async update(request, response) {
         const { id } = request.params;
         const annotation = await Annotations.findOne({ _id: id });
-        
-        if (annotation.priority) {
-            annotation.priority = false;
-        } else {
-            annotation.priority = true;
+
+        if (!annotation) {
+            return response.status(404).json({ error: "Annotation not found" });
         };
+        
+        annotation.priority = !annotation.priority;
 
         await annotation.save();
 
