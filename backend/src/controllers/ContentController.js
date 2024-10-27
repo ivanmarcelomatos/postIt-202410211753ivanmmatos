@@ -8,9 +8,15 @@ module.exports = {
 
         const annotation = await Annotations.findOne({ _id : id });
 
-        if(notes) {
-            annotation.notes = notes;
+        if (!annotation) {
+            return response.status(404).json({ error: "Annotation not found" });
         };
+
+        if (!notes) {
+            return response.status(400).json({ error: "No notes provided" });
+        };
+
+        annotation.notes = notes;
 
         await annotation.save();
 
