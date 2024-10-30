@@ -1,12 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Header from './Header';
 
 function App() {
+  let [counter, setCounter] = useState(0);
+
+  function handleSum() {
+    setCounter(counter + 1);
+  };
+
+  function handleMinus() {
+    setCounter(counter - 1);
+  };
+
   return (
     <>
-      <Header title='my note 1'/>
-      <Header title='my note 2'/>
-      <Header title='my note 3'/>
+      <h1>{counter}</h1>
+      <button onClick={handleMinus}>-</button>
+      <button onClick={handleSum}>+</button>
     </>
   );
 }
