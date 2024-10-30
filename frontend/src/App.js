@@ -1,24 +1,27 @@
-import React, { useState } from 'react';
-import Header from './Header';
+import React from 'react';
+
 
 function App() {
-  const [counter, setCounter] = useState(0);
-
-  function handleSum() {
-    setCounter(counter + 1);
-  };
-
-  function handleMinus() {
-    setCounter(counter - 1);
-  };
 
   return (
-    <>
-      <h1>{counter}</h1>
-      <button onClick={handleMinus}>-</button>
-      <button onClick={handleSum}>+</button>
-    </>
-  );
+    <div id="app">
+      <aside>
+        <strong>Notebook</strong>
+        <form>
+          <div className="input-block">
+            <label htmlfor="title">note title</label>
+            <input />
+          </div>
+          <div className="input-block">
+            <label htmlfor="note">notes</label>
+            <textarea></textarea>
+          </div>
+          <button type="submit">Save</button>
+        </form>
+      </aside>
+      <main></main>
+    </div>
+  )
 }
 
 export default App;
