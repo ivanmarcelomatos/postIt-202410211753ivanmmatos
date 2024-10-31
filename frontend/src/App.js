@@ -15,11 +15,11 @@ function App() {
         <strong>Notebook</strong>
         <form>
           <div className="input-block">
-            <label htmlfor="title">note title</label>
+            <label htmlFor="title">note title</label>
             <input />
           </div>
           <div className="input-block">
-            <label htmlfor="note">notes</label>
+            <label htmlFor="note">notes</label>
             <textarea></textarea>
           </div>
           <button type="submit">Save</button>
