@@ -28,6 +28,16 @@ function App() {
       <main>
         <ul>
           <Notes />
+          <Notes />
+          <Notes />
+          <Notes />
+          <Notes />
+          <Notes />
+          <Notes />
+          <Notes />
+          <Notes />
+          <Notes />
+          <Notes />
         </ul>
       </main>
     </div>
