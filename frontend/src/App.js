@@ -39,7 +39,11 @@ function App() {
           </div>
           <div className="input-block">
             <label htmlFor="note">notes</label>
-            <textarea></textarea>
+            <textarea
+              required 
+              value={ notes }
+              onChange={ e => setNotes(e.target.value) }
+            />
           </div>
           <button type="submit">Save</button>
         </form>
