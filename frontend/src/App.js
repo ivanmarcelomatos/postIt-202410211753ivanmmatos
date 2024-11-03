@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+
+import api from './services/api';
+
 import './global.css';
 import './app.css';
 import './sidebar.css';
