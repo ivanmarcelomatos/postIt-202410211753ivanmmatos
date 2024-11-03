@@ -41,6 +41,17 @@ function App() {
     setAllNotes([...allNotes, response.data]);
   }
 
+  useEffect(() => {
+    function enableSubmitButton() {
+      let btn = document.getElementById('btn_submit');
+      btn.style.background = '#FFD3CA';
+      if(title && notes) {
+        btn.style.background = '#EB8F7A';
+      }
+    }
+    enableSubmitButton();
+  }, [title, notes]);
+
   return (
     <div id="app">
       <aside>
@@ -62,7 +73,7 @@ function App() {
               onChange={ e => setNotes(e.target.value) }
             />
           </div>
-          <button type="submit">Save</button>
+          <button id="btn_submit" type="submit">Save</button>
         </form>
       </aside>
       <main>
