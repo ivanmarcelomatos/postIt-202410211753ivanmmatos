@@ -22,6 +22,9 @@ function App() {
       notes,
       priority: false,
     });
+
+    setTitles('');
+    setNotes('');
   }
 
   return (
