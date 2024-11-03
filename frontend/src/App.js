@@ -67,17 +67,9 @@ function App() {
       </aside>
       <main>
         <ul>
-          <Notes />
-          <Notes />
-          <Notes />
-          <Notes />
-          <Notes />
-          <Notes />
-          <Notes />
-          <Notes />
-          <Notes />
-          <Notes />
-          <Notes />
+          { allNotes.map(data => (
+            <Notes data = { data }/>
+          )) }
         </ul>
       </main>
     </div>

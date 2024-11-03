@@ -1,16 +1,16 @@
 import React from 'react';
 
-function Notes() {
+function Notes({data}) {
     return(
         <>
             <li className="notepad-infos">
             <div>
-              <strong>Fazer Compras</strong>
+              <strong>{ data.title }</strong>
               <div>
                 x
               </div>
             </div>
-            <textarea defaultValue="lorem20 asdf asdf 2 asdqweur asd;fljasdf qw8e"></textarea>
+            <textarea defaultValue={ data.notes }></textarea>
             <span>!</span>
           </li>  
         </>
