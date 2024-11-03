@@ -14,11 +14,21 @@ function App() {
   const [ title, setTitles ] = useState('');
   const [ notes, setNotes ] = useState('');
 
+  async function handleSubmit(e) {
+    e.preventDefault();
+
+    const response = await api.post('/annotations', {
+      title,
+      notes,
+      priority: false,
+    });
+  }
+
   return (
     <div id="app">
       <aside>
         <strong>Notebook</strong>
-        <form>
+        <form onSubmit={ handleSubmit }>
           <div className="input-block">
             <label htmlFor="title">note title</label>
             <input />
