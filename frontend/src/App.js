@@ -38,6 +38,7 @@ function App() {
 
     setTitles('');
     setNotes('');
+    setAllNotes([...allNotes, response.data]);
   }
 
   return (
