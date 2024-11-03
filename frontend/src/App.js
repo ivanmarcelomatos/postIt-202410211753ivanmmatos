@@ -11,6 +11,8 @@ import Notes from './Components/Notes';
 
 
 function App() {
+  const [ title, setTitles ] = useState('');
+  const [ notes, setNotes ] = useState('');
 
   return (
     <div id="app">
