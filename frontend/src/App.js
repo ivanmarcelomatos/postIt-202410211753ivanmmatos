@@ -68,7 +68,7 @@ function App() {
       <main>
         <ul>
           { allNotes.map(data => (
-            <Notes data = { data }/>
+            <Notes key={data._id} data = { data }/>
           )) }
         </ul>
       </main>
