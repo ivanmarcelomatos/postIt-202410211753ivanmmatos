@@ -13,6 +13,7 @@ import Notes from './Components/Notes';
 function App() {
   const [ title, setTitles ] = useState('');
   const [ notes, setNotes ] = useState('');
+  const [ allNotes, setAllNotes ] = useState([]);
 
   async function handleSubmit(e) {
     e.preventDefault();
