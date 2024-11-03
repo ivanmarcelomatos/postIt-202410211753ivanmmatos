@@ -31,7 +31,11 @@ function App() {
         <form onSubmit={ handleSubmit }>
           <div className="input-block">
             <label htmlFor="title">note title</label>
-            <input />
+            <input
+              required 
+              value={ title }
+              onChange={ e => setTitles(e.target.value)  }
+            />
           </div>
           <div className="input-block">
             <label htmlFor="note">notes</label>
