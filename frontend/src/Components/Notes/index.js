@@ -1,6 +1,8 @@
 import React from 'react';
 import { AiTwotoneDelete, AiOutlineExclamationCircle } from "react-icons/ai";
 
+import './styles.css';
+
 
 function Notes({data}) {
     return(
