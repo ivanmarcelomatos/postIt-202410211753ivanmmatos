@@ -27,9 +27,6 @@ function App() {
 
   }
 
-    getAllNotes();
-
-  }, []);
 
   async function handleDelete(id) {
     const deletedNote = await api.delete(`/annotations/${id}`);
