@@ -16,8 +16,12 @@ function App() {
   const [ allNotes, setAllNotes ] = useState([]);
 
   useEffect(() => {
-    async function getAllNotes() {
-      const response = await api.get('/annotations', );
+    getAllNotes();
+  }, []);
+
+
+  async function getAllNotes() {
+    const response = await api.get('/annotations', );
 
       setAllNotes(response.data);
 
