@@ -103,6 +103,7 @@ function App() {
               key={data._id} 
               data = { data }
               handleDelete={handleDelete}
+              handleChangePriority={handleChangePriority}
             />
           )) }
         </ul>
