@@ -23,9 +23,9 @@ function App() {
   async function getAllNotes() {
     const response = await api.get('/annotations', );
 
-      setAllNotes(response.data);
+    setAllNotes(response.data);
 
-    }
+  }
 
     getAllNotes();
 
