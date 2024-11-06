@@ -36,6 +36,15 @@ function App() {
     }
   };
 
+  async function handleChangePriority(id) {
+    const note = await api.post(`/priorities/${id}`);
+
+    if(note) {
+      getAllNotes();
+    };
+
+  };
+
   async function handleSubmit(e) {
     e.preventDefault();
 
