@@ -36,6 +36,16 @@ function App() {
     }
   };
 
+  function handleChange(e) {
+    setSelectedValue(e.value);
+
+    if(e.checked && e.value !== 'all') {
+      loadNotes(e.value);
+    } else {
+      getAllNotes();
+    }
+  };
+
   async function handleDelete(id) {
     const deletedNote = await api.delete(`/annotations/${id}`);
 
