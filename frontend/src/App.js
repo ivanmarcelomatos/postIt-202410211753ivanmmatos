@@ -113,7 +113,10 @@ function App() {
           </div>
           <button id="btn_submit" type="submit">Save</button>
         </form>
-        <RadioButton />
+        <RadioButton 
+          selectedValue={selectedValue}
+          handleChange={handleChange}
+        />
       </aside>
       <main>
         <ul>
