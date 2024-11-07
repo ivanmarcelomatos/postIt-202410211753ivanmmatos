@@ -27,6 +27,14 @@ function App() {
 
   }
 
+  async function loadNotes(option) {
+    const params = { priority: option };
+    const response = await api.get(`/priorities`, { params });
+
+    if(response) {
+      setAllNotes(response.data);
+    }
+  };
 
   async function handleDelete(id) {
     const deletedNote = await api.delete(`/annotations/${id}`);
