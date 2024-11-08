@@ -8,26 +8,35 @@ import FormLabel from '@mui/material/FormLabel';
 
 import './styles.css';
 
-export default function TaskPriorityRadioButtons() { 
-    const [value, setValue] = React.useState('normal'); 
-    
-    const handleChange = (event) => { 
-        setValue(event.target.value); 
-    }; 
-    
+export default function TaskPriorityRadioButtons({ selectedValue, handleChange }) { 
+     
     return ( 
             <FormControl component="fieldset"> 
                 <FormLabel component="legend">Task Filter</FormLabel> 
                 <RadioGroup 
                     aria-label="task-priority" 
                     name="taskPriority" 
-                    value={value} 
                     onChange={handleChange} 
                 > 
                     <div className="radioOptions">
-                        <FormControlLabel value="normal" control={<Radio sx={{ color: '#FFD3CA', '&.Mui-checked': { color: '#FB8F7A' } }} />} label="Normal" />
-                        <FormControlLabel value="priority" control={<Radio sx={{ color: '#FFD3CA', '&.Mui-checked': { color: '#FB8F7A' } }} />} label="Priority" /> 
-                        <FormControlLabel value="all" control={<Radio sx={{ color: '#FFD3CA', '&.Mui-checked': { color: '#FB8F7A' } }} />} label="All" /> 
+                        <FormControlLabel 
+                            value="all"
+                            checked={selectedValue === 'all'}
+                            onChange={e => handleChange(e.target)} 
+                            control={<Radio sx={{ color: '#FFD3CA', '&.Mui-checked': { color: '#FB8F7A' } }} />} label="All" 
+                        />
+                        <FormControlLabel 
+                            value="true" 
+                            checked={selectedValue === 'true'}
+                            onChange={e => handleChange(e.target)}
+                            control={<Radio sx={{ color: '#FFD3CA', '&.Mui-checked': { color: '#FB8F7A' } }} />} label="Priority" 
+                        />
+                        <FormControlLabel 
+                            value="false" 
+                            checked={selectedValue === 'false'}
+                            onChange={e => handleChange(e.target)}
+                            control={<Radio sx={{ color: '#FFD3CA', '&.Mui-checked': { color: '#FB8F7A' } }} />} label="Normal" 
+                        />  
                     </div>
                 </RadioGroup> 
             </FormControl> 
