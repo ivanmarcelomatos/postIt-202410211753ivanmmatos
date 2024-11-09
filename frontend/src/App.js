@@ -77,7 +77,14 @@ function App() {
 
     setTitles('');
     setNotes('');
-    setAllNotes([...allNotes, response.data]);
+
+    if(selectedValue !== 'all') {
+      getAllNotes();
+    } else {
+      setAllNotes([...allNotes, response.data]);
+    };
+
+    setSelectedValue('all');
   }
 
   useEffect(() => {
