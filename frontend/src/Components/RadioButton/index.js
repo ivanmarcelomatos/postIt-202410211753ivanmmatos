@@ -1,7 +1,6 @@
 import React from 'react';
 
 import Radio from '@mui/material/Radio';
-import RadioGroup from '@mui/material/RadioGroup'; 
 import FormControlLabel from '@mui/material/FormControlLabel'; 
 import FormControl from '@mui/material/FormControl'; 
 import FormLabel from '@mui/material/FormLabel';
@@ -13,11 +12,6 @@ export default function TaskPriorityRadioButtons({ selectedValue, handleChange }
     return ( 
             <FormControl component="fieldset"> 
                 <FormLabel component="legend">Task Filter</FormLabel> 
-                <RadioGroup 
-                    aria-label="task-priority" 
-                    name="taskPriority" 
-                    onChange={handleChange} 
-                > 
                     <div className="radioOptions">
                         <FormControlLabel 
                             value="all"
@@ -38,7 +32,6 @@ export default function TaskPriorityRadioButtons({ selectedValue, handleChange }
                             control={<Radio sx={{ color: '#FFD3CA', '&.Mui-checked': { color: '#FB8F7A' } }} />} label="Normal" 
                         />  
                     </div>
-                </RadioGroup> 
             </FormControl> 
     )
 }
