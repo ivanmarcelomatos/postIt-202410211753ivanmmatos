@@ -12,7 +12,7 @@ import RadioButton from './Components/RadioButton';
 
 function App() {
   const [ selectedValue, setSelectedValue ] = useState('all');
-  const [ title, setTitles ] = useState('');
+  const [ title, setTitle ] = useState('');
   const [ notes, setNotes ] = useState('');
   const [ allNotes, setAllNotes ] = useState([]);
 
@@ -75,7 +75,7 @@ function App() {
       priority: false,
     });
 
-    setTitles('');
+    setTitle('');
     setNotes('');
 
     if(selectedValue !== 'all') {
@@ -109,7 +109,7 @@ function App() {
               required
               maxLength="30" 
               value={ title }
-              onChange={ e => setTitles(e.target.value)  }
+              onChange={ e => setTitle(e.target.value)  }
             />
           </div>
           <div className="input-block">
