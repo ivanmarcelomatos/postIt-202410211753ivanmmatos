@@ -39,7 +39,7 @@ li.notepad-infos-priority textarea {
 }
 
 li.notepad-infos-priority textarea:hover {
-    cursor: default;
+    cursor: text;
 }
 
 li.notepad-infos-priority span {
