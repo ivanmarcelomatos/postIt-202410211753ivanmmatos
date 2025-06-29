@@ -13,11 +13,7 @@ module.exports = {
         const { id } = request.params;
         const annotation = await Annotations.findOne({ _id: id });
         
-        if (annotation.priority) {
-            annotation.priority = false;
-        } else {
-            annotation.priority = true;
-        };
+        annotation.priority = !annotation.priority;
 
         await annotation.save();
 
